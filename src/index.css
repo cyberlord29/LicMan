@@ -12,3 +12,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.header {
+  margin: 0px;
+  display: inline;
+  background-color: white;
+  /* border-bottom: 2px solid lightgreen; */
+  padding-left: 25px;
+  /* box-shadow: 0px 2px 0px rgba(255, 255, 255, .4), inset 0px -2px 0px rgba(0, 0, 0, .4); */
+  box-shadow:  0 0 5px -1px #333;
+}
+
+.inputText
+{
+  width: 20em;  
+  margin-bottom: 8px; 
+}
+
+label
+{
+  margin-left:2px;
+}
