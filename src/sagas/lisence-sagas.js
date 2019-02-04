@@ -20,10 +20,9 @@ function * createLicense( { payload } ) {
     const response = yield axios.post(`/licenses`,payload)
     if (response && response.data) {
         console.log(response.data)
-        // yield put({
-        //     type: ,
-        //     data: response.data.userList
-        //   })
+        yield put({
+            type: GET_LICENSES
+          })
     }
 }
 

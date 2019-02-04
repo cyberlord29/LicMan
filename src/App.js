@@ -61,24 +61,30 @@ class App extends Component {
       { key:'product' , name:'Product',resizable:true},
       { key:'account_number', name:'Account Number',resizable:true},
       { key:'id' , name:'License Key',resizable:true},
+      { key:'end_time' , name:'Valid Till' , resizable:true}
     ]
 
     return licenseColumns
   }
+  
+  isValid = () => {
+    var a =Object.keys(this.props.licMan.license).filter((a)=>{return this.props.licMan.license[a]===''}).length === 0
+    // console.log( Object.keys(this.props.licMan.license).filter((a)=>{return this.props.licMan.license[a]===''}))
+    return a 
+  }
 
   createRows = (data) => {
-    // TODO handle 'Local' source from server-side by adding entry in Table
     let rows = []
     for (let i = 0; i < data.length; i++) {
       rows.push({
         id: data[i].id,
         product: JSON.parse(data[i].product).name,
-        user: JSON.parse(data[i].user).first_name + JSON.parse(data[i].user).last_name,
+        user: JSON.parse(data[i].user).first_name + ' ' +JSON.parse(data[i].user).last_name,
         email: JSON.parse(data[i].user).email,
         account_number:data[i].account_number,
+        end_time:data[i].end_time
        })
     }
-
     return rows
   }
 
@@ -179,7 +185,7 @@ class App extends Component {
             <Panel.Toggle onClick={()=>{this.setState({showCreate:!this.state.showCreate})}}> 
               <div style={{display: 'flex' , flexDirection: 'row' , alignItems:'center', justifyContent:'space-between'}}>
             Create License
-                {this.state.showCreate && <Button onClick={()=>{this.props.createLicense(this.props.licMan.license)}} >
+                {this.state.showCreate && <Button disabled={!this.isValid()} onClick={()=>{this.props.createLicense(this.props.licMan.license)}} >
                   Create
                 </Button>}
               </div>

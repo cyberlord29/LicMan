@@ -9,15 +9,12 @@ const initialState = {
         firstName:'',
         lastName: '',
         productName: '',
-        platform: '',
+        // platform: '',
         version:'stable',
         startTime:'122134123',
-        endTime:'123412342',
+        endTime:'',
         accountNumber:'',
         period:'',
-        licenses:[],
-        users:[],
-        products: [],
     },
     licenseData:[]
 }
@@ -25,6 +22,18 @@ const initialState = {
 const lisenceManager = (state = initialState, action) => {
     switch(action.type){
         case SET_PARAM:
+        let end = '0'
+        if(action.payload.id==='period'){
+            end = Math.floor(new Date().getTime()/1000.0) + 86400*action.payload.value + 5000
+            return {
+                ...state,
+                license:{
+                    ...state.license,
+                    [action.payload.id]: action.payload.value,
+                    endTime:end
+                }
+            }
+        }
         return {
             ...state,
             license:{
