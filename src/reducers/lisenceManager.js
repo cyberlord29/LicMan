@@ -24,7 +24,7 @@ const lisenceManager = (state = initialState, action) => {
         case SET_PARAM:
         let end = '0'
         if(action.payload.id==='period'){
-            end = Math.floor(new Date().getTime()/1000.0) + 86400*action.payload.value + 5000
+            end = Math.floor(new Date().getTime()/1000.0) + 86400*action.payload.value 
             return {
                 ...state,
                 license:{

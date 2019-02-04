@@ -6,8 +6,7 @@ export const AppContainer = styled.div`
   width: 100%;
   font-weight: 700;
   font-family: Serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 `;
 export const FlexBox = styled.div`
   display: flex;
