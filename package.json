@@ -2,7 +2,7 @@
   "name": "portal-app",
   "version": "3.57.0",
   "private": true,
-  "proxy": "http://18.130.108.238",
+  "proxy": "localhost:5000",
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "eslint": "^4.16.0",

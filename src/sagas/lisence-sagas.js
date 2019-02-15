@@ -17,7 +17,7 @@ function * getLicensesFlow() {
 }
 
 function * createLicense( { payload } ) {
-    const response = yield axios.post(`/licenses`,payload)
+    const response = yield axios.post(`http://18.130.108.238/licenses`,payload)
     if (response && response.data) {
         console.log(response.data)
         yield put({
@@ -27,7 +27,7 @@ function * createLicense( { payload } ) {
 }
 
 function * getLicenses(){
-    const response = yield axios.get(`/licenses`)
+    const response = yield axios.get(`http://18.130.108.238/licenses`)
     if(response && response.data){
         yield put({
             type:GET_LICENSES_SUCCESS,
