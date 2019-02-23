@@ -13,6 +13,14 @@ code {
     monospace;
 }
 
+a:focus,a:hover{
+  text-decoration: none;
+}
+
+.react-grid-HeaderCell > .checkbox-align{
+  display: none;
+}
+
 .header {
   margin: 0px;
   display: inline;

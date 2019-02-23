@@ -6,6 +6,13 @@ import { withRouter } from 'react-router-dom'
 import cx from 'classnames'
 
 class Table extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      selectedRow:[]
+
+    }
+  }
   createRows = (data) => {
     this._rows = data
   }
@@ -13,6 +20,8 @@ class Table extends Component {
   rowGetter = (i) => {
     return this._rows[i]
   }
+  
+
 
   render () {
     this.createRows(this.props.data)
@@ -25,6 +34,15 @@ class Table extends Component {
               rowGetter ={this.rowGetter}
               rowsCount ={this.props.data.length || 0}
               minHeight ={500}
+              rowSelection={{
+                showCheckbox: true,
+                enableShiftSelect: true,
+                onRowsSelected: this.props.onRowsSelected,
+                onRowsDeselected: this.props.onRowsDeselected,
+                selectBy: {
+                  indexes: this.props.selected
+                }
+              }}
             />
           </div>
         </div>
