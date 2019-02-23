@@ -81,7 +81,7 @@ class Licenses extends Component {
         email: JSON.parse(data[i].user).email,
         accountNumber:data[i].account_number,
         endDateTime:data[i].end_time,
-        endTime: epoch,
+        endTime: epoch/1000,
         period: days.toString()
        })
     }
