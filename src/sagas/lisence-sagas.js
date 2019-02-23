@@ -12,8 +12,7 @@ import {
 
 import axios from 'axios'
 
-const url = "http://localhost:5000"
-// http://18.130.108.238
+const url = "http://18.130.108.238"
 
 function * getLatestUsersFlow() {
     yield takeLatest(CREATE_LICENSE, createLicense)
