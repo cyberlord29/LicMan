@@ -134,7 +134,7 @@ class Products extends Component {
             <Panel.Heading>
             <div style={{display: 'flex' , flexDirection: 'row' , alignItems:'center', justifyContent:'space-between'}}>
               <Panel.Title>
-              Licences
+              Products
               </Panel.Title>
             </div>
             </Panel.Heading>
